@@ -18,10 +18,10 @@ export default function TotalValueLocked({ }) {
   const readWalletDoshiBalance = async () => {
 
     const data = await readContract({
-      address: process.env.REACT_APP_DOSHI_TOKEN_CONTRACT_ADDRESS,
+      address: process.env.REACT_APP_BTB_TOKEN_CONTRACT_ADDRESS,
       abi: TokenABI,
       functionName: 'balanceOf',
-      args: [process.env.REACT_APP_DOSHI_STAKING_CONTRACT_ADDRESS],
+      args: [process.env.REACT_APP_BTB_STAKING_CONTRACT_ADDRESS],
       formatUnits: 'gwei',
       chainId: 1
     })
@@ -43,7 +43,7 @@ export default function TotalValueLocked({ }) {
       />
       <div className="absolute top-5 left-5">
         <a className="text-gray-300 hover:text-white text-[12px] group font-semibold flex items-center gap-2 " target="_blank" rel="noreferrer"
-          href={`https://goerli.etherscan.io/address/${process.env.REACT_APP_DOSHI_STAKING_CONTRACT_ADDRESS}`}
+          href={`https://goerli.etherscan.io/address/${process.env.REACT_APP_BTB_STAKING_CONTRACT_ADDRESS}`}
         >View on Etherscan <FiExternalLink className="text-gray-300 hover:text-white group-hover:text-white w-[12px] h-[12px]" /></a>
       </div>
       <Reveal keyframes={fadeInUp} className='onStep' delay={0} duration={800} triggerOnce>
@@ -57,7 +57,7 @@ export default function TotalValueLocked({ }) {
             <div className="text-[26px] font-semibold">Total Value Locked</div>
           </div>
           <div className="text-[42px] font-semibold">
-            ${numberWithCommas(tokenTvl * process.env.REACT_APP_DOSHI2USDT_RATE)}
+            ${numberWithCommas(tokenTvl * process.env.REACT_APP_BTB2USDT_RATE)}
           </div>
         </div>
         <div className="pt-10 flex flex-wrap w-full justify-center gap-10">
@@ -66,7 +66,7 @@ export default function TotalValueLocked({ }) {
             <div className="text-[15px] font-semibold ">DOSHI</div>
           </div>
           <div className="flex flex-col min-w-[65px]   items-center">
-            <div className="text-[15px] font-semibold">{formatNumber(tokenTvl * process.env.REACT_APP_DOSHI2USDT_RATE)}</div>
+            <div className="text-[15px] font-semibold">{formatNumber(tokenTvl * process.env.REACT_APP_BTB2USDT_RATE)}</div>
             <div className="text-[15px] font-semibold flex items-center gap-1">
               <img
                 src="/tvl/usdt.svg"

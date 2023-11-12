@@ -51,7 +51,7 @@ function App() {
 
   useEffect(() => {
     if (pageLocation.pathname === "/") {
-      navigate("/overview");
+      navigate("/claim");
     }
     else dispatch(setCurrentPath(pageLocation.pathname));
   }, []);
@@ -149,8 +149,8 @@ function App() {
                   ))}
                 </div>
                 : <div className="flex flex-col items-center gap-2 " > {
-                  (chain && chain.id !== 5) &&
-                  <div className="text-red-400 text-[16px] font-semibold text-center">Please change the network of your wallet into goerli. Doshi staking platform works on Goerli network.</div>
+                  (chain && (chain.id !== 80001) && (chain.id != 137)) &&
+                  <div className="text-red-400 text-[16px] font-semibold text-center">Please change the network of your wallet into mumbai/polygon and try again. BTB staking platform works on mumbai/polygon network.</div>
                 }
                   {
                     (chain && chain.id === 5) &&

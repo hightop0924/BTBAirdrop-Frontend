@@ -26,7 +26,7 @@ import {
 import { WagmiConfig, createConfig, configureChains } from 'wagmi'
 import { publicProvider } from 'wagmi/providers/public'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
-import { goerli } from "viem/chains";
+import { goerli, polygonMumbai, polygon } from "viem/chains";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -36,7 +36,7 @@ const projectId = process.env.REACT_APP_WALLETCONNECT_PROJECT_ID;
 // Configure chains & providers with the Alchemy provider.
 // Two popular providers are Alchemy (alchemy.com) and Infura (infura.io)
 const { chains, publicClient } = configureChains(
-  [goerli],
+  [goerli, polygonMumbai, polygon],
   [alchemyProvider({ apiKey: process.env.REACT_APP_ALCHEMY_ID }), publicProvider()],
 )
 

@@ -5,12 +5,10 @@ export const SET_LOADING = "set_loading";
 export const PREVENT_SELECT = "prevent_select";
 export const BTN_WIDTH_IN_MAIN_AREA = 200;
 export const BTN_HEIGHT_IN_MAIN_AREA = 60;
-export const TabValues = ["Overview",
+export const TabValues = [
   "Claim",
-  "Calculator",
   "Stake",
-  "Calendar",
-  "Docs"];
+];
 
 export const fadeInUp = keyframes`
       0% {

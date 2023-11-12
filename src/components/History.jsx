@@ -43,7 +43,7 @@ export default function History({ className }) {
             apy: parseInt(poolsData[stakesList[index]["_poolIndex"]]?.apy?.replace("%", "")),
             lockperiod: poolsData[stakesList[index]["_poolIndex"]]?.period,
             rewards:
-              calculateDailyDoshiRewards(formatGwei(stakesList[index]["_amount"]), poolsData[stakesList[index]["_poolIndex"]]?.period) * process.env.REACT_APP_DOSHI2USDT_RATE
+              calculateDailyDoshiRewards(formatGwei(stakesList[index]["_amount"]), poolsData[stakesList[index]["_poolIndex"]]?.period) * process.env.REACT_APP_BTB2USDT_RATE
           })
         }
         setTableRows(tempRows);

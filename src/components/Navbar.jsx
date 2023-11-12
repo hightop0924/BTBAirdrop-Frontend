@@ -31,8 +31,9 @@ export default function NavbarWithCTAButton({ className }) {
 
   useEffect(() => {
     if (isConnected) {
-      if (chain.id !== 5) {
-        toast.warning("Please change the network of your wallet into goerli. Doshi staking platform works on Goerli network.");
+      if ((chain.id !== 80001) && (chain.id != 137)) {
+        toast.warning("Please change the network of your wallet into mumbai/polygon and try again. BTB staking platform works on mumbai/polygon network.");
+        return;
       }
     }
   }, [isConnected])
@@ -81,8 +82,8 @@ export default function NavbarWithCTAButton({ className }) {
             :
             <div className="flex flex-col items-center gap-2 " >
               {
-                (chain && chain.id !== 5) &&
-                <div className="text-red-400 text-[16px] font-semibold text-center">Please change the network of your wallet into goerli. Doshi staking platform works on Goerli network.</div>
+                (chain && (chain.id !== 80001) && (chain.id != 137)) &&
+                <div className="text-red-400 text-[16px] font-semibold text-center">Please change the network of your wallet into mumbai/polygon and try again. BTB staking platform works on mumbai/polygon network.</div>
               }
               {
                 (chain && chain.id === 5) &&

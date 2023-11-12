@@ -23,25 +23,25 @@ export default function Performance({ className }) {
     try {
       const data = await readContracts({
         contracts: [{
-          address: process.env.REACT_APP_DOSHI_STAKING_CONTRACT_ADDRESS,
+          address: process.env.REACT_APP_BTB_STAKING_CONTRACT_ADDRESS,
           abi: StakingABI,
           functionName: 'poolData',
           args: [0]
         },
         {
-          address: process.env.REACT_APP_DOSHI_STAKING_CONTRACT_ADDRESS,
+          address: process.env.REACT_APP_BTB_STAKING_CONTRACT_ADDRESS,
           abi: StakingABI,
           functionName: 'poolData',
           args: [1]
         },
         {
-          address: process.env.REACT_APP_DOSHI_STAKING_CONTRACT_ADDRESS,
+          address: process.env.REACT_APP_BTB_STAKING_CONTRACT_ADDRESS,
           abi: StakingABI,
           functionName: 'poolData',
           args: [2]
         },
         {
-          address: process.env.REACT_APP_DOSHI_STAKING_CONTRACT_ADDRESS,
+          address: process.env.REACT_APP_BTB_STAKING_CONTRACT_ADDRESS,
           abi: StakingABI,
           functionName: 'poolData',
           args: [3]
